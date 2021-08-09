@@ -15,7 +15,7 @@ case $- in
 esac
 
 # Path to the bash it configuration
-export BASH_IT="/home/kalka/.bash-it"
+export BASH_IT="/home/kalka/git/dotfiles/.bash-it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -80,6 +80,8 @@ export SCM_CHECK=true
 
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
+
+source /home/kalka/git/dotfiles/.commonrc
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
