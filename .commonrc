@@ -7,3 +7,5 @@ NEW_PATH=$JAVA_HOME:$APPS_PREFIX/vscode/bin:$APPS_PREFIX/pycharm-2021.2/bin:$APP
 export EDITOR='code'
 
 export PATH=$PATH:$NEW_PATH
+
+export GPG_TTY="$(tty)"
