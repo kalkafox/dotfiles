@@ -1,8 +1,8 @@
-for f in /home/kalka/git/scripts/sh/*.sh; do source $f; done
+#for f in /home/kalka/git/scripts/sh/*.sh; do source $f; done
 
-JAVA_HOME=/home/kalka/Java/jdk-16.0.2/bin
-APPS_PREFIX=/home/kalka/Apps
-NEW_PATH=$JAVA_HOME:$APPS_PREFIX/vscode/bin:$APPS_PREFIX/pycharm-2021.2/bin:$APPS_PREFIX/idea-IU-212.4746.92/bin
+export DENO_INSTALL="/home/kalka/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 
 export EDITOR='code'
 
