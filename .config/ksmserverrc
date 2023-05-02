@@ -1,0 +1,23 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
+[LegacySession: saved at previous logout]
+count=0
+
+[Session: saved at previous logout]
+clientId1=1016112814d146000168305645900000006630004
+clientId2=1016112814d146000168304580200000041240022
+clientId3=1016112814d146000168305871100000006630008
+count=3
+program1=/usr/lib/DiscoverNotifier
+program2=/usr/bin/albert
+program3=/home/kalka/Apps/Prism/bin/prismlauncher
+restartCommand1=/usr/lib/DiscoverNotifier,-session,1016112814d146000168305645900000006630004_1683063210_969653
+restartCommand2=/usr/bin/albert,-session,1016112814d146000168304580200000041240022_1683063210_969648
+restartCommand3=/home/kalka/Apps/Prism/bin/prismlauncher,-session,1016112814d146000168305871100000006630008_1683063210_969661
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+userId1=kalka
+userId2=kalka
+userId3=kalka

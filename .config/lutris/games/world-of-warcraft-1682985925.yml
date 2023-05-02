@@ -1,0 +1,55 @@
+game:
+  arch: win64
+  exe: /run/media/kalka/1A0EAC500EAC272B/Program Files (x86)/World of Warcraft/_retail_/Wow.exe
+  prefix: /home/kalka/Games/battlenet
+game_slug: world-of-warcraft
+name: World of Warcraft
+requires: blizzard-battlenet-standard
+script:
+  game:
+    arch: win64
+    args: --exec="launch WoW"
+    exe: drive_c/Program Files (x86)/Battle.net/Battle.net.exe
+    prefix: $GAMEDIR
+  requires: blizzard-battlenet-standard
+  system:
+    env:
+      DXVK_CONFIG_FILE: $GAMEDIR/dxvk.conf
+      DXVK_STATE_CACHE_PATH: $GAMEDIR
+      STAGING_SHARED_MEMORY: 1
+      __GL_DXVK_OPTIMIZATIONS: 1
+      __GL_SHADER_DISK_CACHE: 1
+      __GL_SHADER_DISK_CACHE_PATH: $GAMEDIR
+  wine:
+    battleye: false
+    d3d_extras: true
+    dxvk: true
+    dxvk_nvapi: false
+    eac: false
+    esync: true
+    fsr: false
+    version: lutris-GE-Proton7-43-x86_64
+    vkd3d: true
+slug: world-of-warcraft-battlenet
+system:
+  env:
+    DXVK_CONFIG_FILE: /home/kalka/Games/battlenet/dxvk.conf
+    DXVK_STATE_CACHE_PATH: /home/kalka/Games/battlenet
+    STAGING_SHARED_MEMORY: '1'
+    __GL_DXVK_OPTIMIZATIONS: '1'
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_PATH: /home/kalka/Games/battlenet
+variables: {}
+version: Battle.net
+wine:
+  battleye: false
+  d3d_extras: true
+  dxvk: true
+  dxvk_nvapi: false
+  eac: false
+  esync: true
+  fsr: false
+  system_winetricks: false
+  version: lutris-GE-Proton7-43-x86_64
+  vkd3d: true
+year: 2004

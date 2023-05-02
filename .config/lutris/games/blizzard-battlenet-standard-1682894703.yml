@@ -1,0 +1,136 @@
+game:
+  arch: win64
+  exe: drive_c/Battle.net-Setup.exe
+  prefix: /home/kalka/Games/battlenet
+game_slug: battlenet
+name: Blizzard Battle.net
+requires: null
+script:
+  files:
+  - bnsetup:
+      filename: Battle.net-Setup.exe
+      url: https://www.battle.net/download/getInstallerForGame?os=win&gameProgram=BATTLENET_APP&version=Live
+  game:
+    arch: win64
+    exe: drive_c/Battle.net-Setup.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      install_gecko: 'False'
+      install_mono: 'False'
+      prefix: /home/kalka/Games/battlenet
+      wine_path: /home/kalka/.local/share/lutris/runners/wine/lutris-GE-Proton7-43-x86_64/bin/wine
+  - task:
+      arch: win64
+      key: background
+      path: HKEY_CURRENT_USER\Control Panel\Colors\
+      prefix: /home/kalka/Games/battlenet
+      type: REG_SZ
+      value: 0 0 0
+      wine_path: /home/kalka/.local/share/lutris/runners/wine/lutris-GE-Proton7-43-x86_64/bin/wine
+  - merge:
+      dst: $GAMEDIR/drive_c
+      src: bnsetup
+  - task:
+      app: arial win10
+      arch: win64
+      prefix: /home/kalka/Games/battlenet
+      silent: 'True'
+      wine_path: /home/kalka/.local/share/lutris/runners/wine/lutris-GE-Proton7-43-x86_64/bin/wine
+  - write_file:
+      content: 'dxgi.nvapiHack = False
+
+        [Overwatch.exe]
+
+        dxvk.hud = compiler'
+      file: $GAMEDIR/dxvk.conf
+  - write_json:
+      data:
+        Client:
+          GameLaunchWindowBehavior: '2'
+          GameSearch:
+            BackgroundSearch: 'true'
+          HardwareAcceleration: 'false'
+          Sound:
+            Enabled: 'false'
+          Streaming:
+            StreamingEnabled: 'false'
+      file: $GAMEDIR/drive_c/users/$USER/AppData/Roaming/Battle.net/Battle.net.config
+  - write_config:
+      file: $GAMEDIR/drive_c/users/$USER/Documents/Overwatch/Settings/Settings_v0.ini
+      key: WindowMode
+      section: Render.13
+      value: '"1"'
+  - write_config:
+      file: $GAMEDIR/drive_c/users/$USER/Documents/Overwatch/Settings/Settings_v0.ini
+      key: Type
+      section: MovieExport.1
+      value: '"1"'
+  - write_config:
+      file: $GAMEDIR/drive_c/users/$USER/Documents/Overwatch/Settings/Settings_v0.ini
+      key: UseHardware
+      section: MovieExport.1
+      value: '"0"'
+  - write_file:
+      content: hasseennewcinematic=True
+      file: $GAMEDIR/drive_c/users/$USER/AppData/Local/Blizzard/Hearthstone/options.txt
+  - task:
+      arch: win64
+      key: version
+      path: HKEY_CURRENT_USER\Software\Wine\AppDefaults\BlizzardBrowser.exe
+      prefix: /home/kalka/Games/battlenet
+      type: REG_SZ
+      value: win7
+      wine_path: /home/kalka/.local/share/lutris/runners/wine/lutris-GE-Proton7-43-x86_64/bin/wine
+  - task:
+      arch: win64
+      key: backend
+      path: HKEY_CURRENT_USER\Software\Wine\DXVA2
+      prefix: /home/kalka/Games/battlenet
+      value: va
+      wine_path: /home/kalka/.local/share/lutris/runners/wine/lutris-GE-Proton7-43-x86_64/bin/wine
+  system:
+    env:
+      DXVK_CONFIG_FILE: $GAMEDIR/dxvk.conf
+      DXVK_HUD: compiler
+      DXVK_STATE_CACHE_PATH: $GAMEDIR
+      STAGING_SHARED_MEMORY: 1
+      __GL_SHADER_DISK_CACHE: 1
+      __GL_SHADER_DISK_CACHE_PATH: $GAMEDIR
+      __GL_SHADER_DISK_CACHE_SKIP_CLEANUP: 1
+  wine:
+    battleye: false
+    d3d_extras: true
+    dxvk: true
+    dxvk_nvapi: false
+    eac: false
+    esync: true
+    fsr: false
+    fsync: true
+    version: lutris-GE-Proton7-43-x86_64
+    vkd3d: true
+slug: blizzard-battlenet-standard
+system:
+  env:
+    DXVK_CONFIG_FILE: /home/kalka/Games/battlenet/dxvk.conf
+    DXVK_HUD: compiler
+    DXVK_STATE_CACHE_PATH: /home/kalka/Games/battlenet
+    STAGING_SHARED_MEMORY: '1'
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_PATH: /home/kalka/Games/battlenet
+    __GL_SHADER_DISK_CACHE_SKIP_CLEANUP: '1'
+variables: {}
+version: standard
+wine:
+  battleye: false
+  d3d_extras: true
+  dxvk: true
+  dxvk_nvapi: false
+  eac: false
+  esync: true
+  fsr: false
+  fsync: true
+  version: lutris-GE-Proton7-43-x86_64
+  vkd3d: true
+year: 1996

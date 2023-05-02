@@ -1,0 +1,12 @@
+[Applets][3]
+immutability=1
+plugin=org.kde.plasma.notes
+
+[Applets][3][Configuration]
+PreloadWeight=42
+geometry=880,457,160,160
+
+[Applets][3][Configuration][General]
+cursorPosition=47
+fontSize=10
+noteId=b5600270-2e41-468b-b6be-96e1332848
